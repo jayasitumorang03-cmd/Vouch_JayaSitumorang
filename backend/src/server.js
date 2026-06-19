@@ -18,8 +18,13 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, cb) => {
-      // Allow requests with no origin (curl, Postman) and configured origins
-      if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+      // Allow requests with no origin (curl, Postman)
+      if (!origin) return cb(null, true);
+      // In development, allow any localhost port
+      if (process.env.NODE_ENV !== 'production' && /^http:\/\/localhost:\d+$/.test(origin)) {
+        return cb(null, true);
+      }
+      if (allowedOrigins.includes(origin)) return cb(null, true);
       cb(new Error(`CORS: origin ${origin} not allowed`));
     },
   })
