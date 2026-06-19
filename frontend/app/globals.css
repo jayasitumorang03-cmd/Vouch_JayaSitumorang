@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Doodle theme variables */
+:root {
+  --doodle-primary: #ff6b6b; /* coral */
+  --doodle-accent: #ffd166; /* warm yellow */
+  --doodle-bg: #fff7ef; /* soft cream */
+  --corp-primary: #0b2b4a; /* corporate navy */
+  --corp-accent: #2b9cf1; /* corporate blue */
+}
+
+/* Base body tweaks for themes */
+body.theme-doodle {
+  background: linear-gradient(180deg, var(--doodle-bg), #fff);
+  font-family: 'Comic Neue', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #222;
+}
+
+body.theme-corporate {
+  background: #f6f8fa;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #0b2b4a;
+}
+
+/* Cards */
+.card-doodle {
+  background: white;
+  border-radius: 12px;
+  border: 2px dashed rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.card-corporate {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid rgba(11,43,74,0.06);
+  box-shadow: 0 2px 6px rgba(11,43,74,0.03);
+}
+
+/* Doodle badges */
+.badge-doodle { background: var(--doodle-accent); color: #4a2a00; padding: 0.25rem 0.5rem; border-radius: 999px; font-weight: 700; }
+.badge-corporate { background: var(--corp-accent); color: white; padding: 0.25rem 0.5rem; border-radius: 6px; font-weight: 600; }
+
+/* Printable corporate report */
+@media print {
+  body { font-family: 'Times New Roman', serif; color: #000; }
+  .no-print { display: none !important; }
+  .card-doodle, .card-corporate { box-shadow: none !important; border: 1px solid #ddd !important; }
+}
+

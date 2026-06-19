@@ -56,8 +56,55 @@ function SourceBadge({ source }) {
 
 function ActionCard({ item, bgClass, borderClass }) {
   const [expanded, setExpanded] = useState(false);
+  // pick theme classes
+  const doodle = document && document.body && document.body.classList.contains('theme-doodle');
+  const cardClass = doodle ? 'card-doodle' : 'card-corporate';
+  const badgeClass = doodle ? 'badge-doodle' : 'badge-corporate';
   return (
-    <div className={`p-4 rounded-lg border ${bgClass} ${borderClass}`}>
+    <div className={`${cardClass} p-4 rounded-lg border ${bgClass} ${borderClass}`}>
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex-1">
+          <p className="font-semibold text-sm text-gray-900">
+            {item.room && (
+              <span className="mr-2 px-1.5 py-0.5 bg-gray-200 text-gray-700 rounded text-xs font-mono">
+                Rm {item.room}
+              </span>
+            )}
+            {item.summary}
+          </p>
+          {item.details && item.details !== item.summary && (
+            <>
+              {!expanded && (
+                <button
+                  onClick={() => setExpanded(true)}
+                  className="mt-1 text-xs text-gray-500 hover:text-gray-700"
+                >
+                  ▸ Show details
+                </button>
+              )}
+              {expanded && (
+                <p className="mt-2 text-sm text-gray-700 leading-relaxed">{item.details}</p>
+              )}
+            </>
+          )}
+        </div>
+        {item.priority && (
+          <span className="flex-shrink-0 text-xs text-gray-400">#{item.priority}</span>
+        )}
+      </div>
+
+      {/* Source citations */}
+      {item.sources?.length > 0 && (
+        <div className="mt-2 text-xs text-gray-400">
+          Source:
+          {item.sources.map((s, i) => (
+            <SourceBadge key={i} source={s} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1">
           <p className="font-semibold text-sm text-gray-900">
@@ -200,12 +247,26 @@ function FlagsSection({ flags }) {
 // ─── Main HandoverView ───────────────────────────────────────────────────────
 
 export default function HandoverView({ data }) {
+  const [theme, setTheme] = React.useState('doodle');
+  React.useEffect(() => {
+    document.body.classList.remove('theme-doodle','theme-corporate');
+    document.body.classList.add(theme === 'doodle' ? 'theme-doodle' : 'theme-corporate');
+  }, [theme]);
   const { hotel, shift_date, morning_date, generated_at, ai_assisted, handover, reconciliation_summary } = data;
 
   return (
     <div>
-      {/* Meta bar */}
-      <div className="mb-6 p-4 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">
+      {/* Theme toggle + Meta bar */}
+      <div className="mb-4 flex items-center justify-between gap-4 no-print">
+        <div>
+          <label className="text-sm text-gray-500 mr-2">Theme:</label>
+          <button onClick={() => setTheme('doodle')} className="mr-2 px-3 py-1 badge-doodle">Doodle</button>
+          <button onClick={() => setTheme('corporate')} className="px-3 py-1 badge-corporate">Corporate</button>
+        </div>
+        <div className="text-sm text-gray-500">Printable report styled as Corporate</div>
+      </div>
+
+      <div className="mb-6 p-4 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 card-corporate card-doodle">
         <div className="flex flex-wrap gap-x-6 gap-y-1">
           <span>🏨 <strong>{hotel?.name}</strong></span>
           <span>🌙 Shift night: <strong>{shift_date}</strong></span>
