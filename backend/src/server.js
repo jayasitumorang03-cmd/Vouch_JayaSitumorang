@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3001;
 const allowedOrigins = [
   process.env.FRONTEND_URL || 'http://localhost:3000',
   'https://vouch-handover.vercel.app',
+  'https://vouchjayasitumorangtest.vercel.app',
 ];
 
 app.use(
