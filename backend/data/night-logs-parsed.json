@@ -1,0 +1,122 @@
+{
+  "shift_date": "2026-05-27",
+  "parsed_at": "2026-06-19T00:00:00Z",
+  "source": "data/night-logs.md",
+  "note": "Pre-parsed from free-text log. Chinese entries translated. This avoids needing an API key for the demo while still demonstrating the full pipeline.",
+  "items": [
+    {
+      "id": "nl_001",
+      "room": "210",
+      "guest": null,
+      "type": "check_in",
+      "description": "Late check-in around 1am, gentleman in room 210, all fine, deposit taken.",
+      "status": "resolved",
+      "urgency": "fyi",
+      "source_text": "One late check-in around 1am, gentleman in 210, all fine, deposit taken.",
+      "original_language": "en",
+      "original_text": null
+    },
+    {
+      "id": "nl_002",
+      "room": "112",
+      "guest": null,
+      "type": "maintenance",
+      "description": "Room 112 aircon: maintenance came to look, diagnosed as compressor failure. Part needs to be ordered — will take a few days. Room 112 remains OUT OF ORDER. Guest originally in 112 is still in relocated room 115.",
+      "status": "unresolved",
+      "urgency": "medium",
+      "source_text": "Room 112 aircon — maintenance finally came to look at it tonight. Bad news, he says it's the compressor and the part needs to be ordered in, will take a few days. So 112 stays out of order for now. The guest who was originally in there is fine, still in 115.",
+      "original_language": "en",
+      "original_text": null
+    },
+    {
+      "id": "nl_003",
+      "room": null,
+      "guest": null,
+      "type": "facilities",
+      "description": "2nd-floor corridor leak near room 215 worsened — steady drip, carpet soaking wet. Bucket placed, wet-floor sign positioned. Building management emergency line called; they said they would send someone but no one arrived before end of shift. STILL NOT FIXED. Requires immediate follow-up — leak is directly outside a guest room.",
+      "status": "unresolved",
+      "urgency": "high",
+      "source_text": "The leak in the 2nd floor corridor (near 215) got worse tonight — there was a steady drip and the carpet was getting soaked, so I put a bucket down and moved the wet floor sign. I tried the maintenance line and the building management emergency number, eventually got through to building management who said they'd send someone but no one came before I left. Still not fixed. Please chase this first thing, it's right outside a guest room.",
+      "original_language": "en",
+      "original_text": null
+    },
+    {
+      "id": "nl_004",
+      "room": "312",
+      "guest": "Lim Boon Heng",
+      "type": "no_show",
+      "description": "The room 312 no-show charge for the guaranteed booking (from the previous night) has been applied per booking terms. This matter is now settled.",
+      "status": "resolved",
+      "urgency": "fyi",
+      "source_text": "312 那个 no-show（昨晚的 guaranteed booking）— 我已经按 booking terms 帮他收了一晚的费用了，这件事 settle 了。",
+      "original_language": "zh",
+      "original_text": "312 那个 no-show（昨晚的 guaranteed booking）— 我已经按 booking terms 帮他收了一晚的费用了，这件事 settle 了。"
+    },
+    {
+      "id": "nl_005",
+      "room": null,
+      "guest": null,
+      "type": "complaint",
+      "description": "WiFi dropping — caller from an upper-floor room (room number not captured, line cut off). Guest said they would come back down if problem persisted but never did. Assumed self-resolved. NOTE: room number unknown — incomplete entry.",
+      "status": "resolved",
+      "urgency": "fyi",
+      "source_text": "Someone called down from one of the upper floor rooms around 3am complaining the wifi kept dropping. I couldn't catch which room it was and the line cut off, they said they'd come back down if it was still bad but they never did, so I assume it sorted itself out.",
+      "original_language": "en",
+      "original_text": null
+    },
+    {
+      "id": "nl_006",
+      "room": "309",
+      "guest": "Jaydeep Suthkumar",
+      "type": "deposit_issue",
+      "description": "Room 309 deposit still not collected. Guest arrived very late; staff did not chase him at 2am. Still no deposit on file. Issue being passed forward again.",
+      "status": "unresolved",
+      "urgency": "medium",
+      "source_text": "309 — the guy with the deposit issue from Tuesday is still not settled, he came in very late and I didn't want to chase him at 2am. Still no deposit on file. Passing it on again.",
+      "original_language": "en",
+      "original_text": null
+    },
+    {
+      "id": "nl_007",
+      "room": "205",
+      "guest": "Daniel Chen",
+      "type": "note",
+      "description": "Room 205 found with door ajar during rounds — bed unslept in, no luggage visible. System still shows Mr Chen as in-house. Room appears unoccupied for a day or two. Possible early checkout that was never recorded. Someone must reconcile this before continuing to bill.",
+      "status": "pending",
+      "urgency": "medium",
+      "source_text": "Did my rounds on the 2nd floor and noticed 205 had the door ajar, bed clearly not slept in, no luggage anywhere in the room. The system still shows Mr Chen in 205 as in-house, but it looks like nobody's been in there for a day or two. Flagging in case he checked out early and it never got recorded — someone should reconcile this before we keep billing him for the room.",
+      "original_language": "en",
+      "original_text": null
+    },
+    {
+      "id": "nl_008",
+      "room": "208",
+      "guest": null,
+      "type": "incident",
+      "description": "Guest in room 208 came to front desk: safe in room cannot be opened. Passport and cash are locked inside. Guest needs to check out first thing in the morning to catch a flight. Password reset was attempted but failed. URGENT: maintenance or safe company must be called immediately to open the safe before guest checkout — otherwise guest cannot leave.",
+      "status": "unresolved",
+      "urgency": "high",
+      "source_text": "208 房的客人刚才下来说房间的保险箱打不开了，他的护照和一些现金锁在里面，明天一早要退房赶飞机。试过重设密码也不行，要尽快找维修或保险箱公司来开，不然他走不了。",
+      "original_language": "zh",
+      "original_text": "208 房的客人刚才下来说房间的保险箱打不开了，他的护照和一些现金锁在里面，明天一早要退房赶飞机。试过重设密码也不行，要尽快找维修或保险箱公司来开，不然他走不了。"
+    },
+    {
+      "id": "nl_009",
+      "room": null,
+      "guest": null,
+      "type": "note",
+      "description": "Coffee machine in the back office is acting up. Night shift noted this is a daytime problem.",
+      "status": "pending",
+      "urgency": "low",
+      "source_text": "Coffee machine in the back is acting up too but that's a daytime problem.",
+      "original_language": "en",
+      "original_text": null
+    }
+  ],
+  "data_quality": {
+    "incomplete_entries": [
+      "nl_005: WiFi complaint — room number unknown. Caller did not identify room, line was cut off. Status assumed resolved but cannot be confirmed."
+    ],
+    "contradictions": []
+  }
+}

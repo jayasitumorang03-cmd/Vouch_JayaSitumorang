@@ -20,7 +20,7 @@ const { parseNightLog } = require('../services/ai');
 
 // ─── sample data (loaded once) ───────────────────────────────────────────────
 
-const DATA_DIR = path.join(__dirname, '..', '..', '..', 'data');
+const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 
 function loadJSON(filename) {
   return JSON.parse(fs.readFileSync(path.join(DATA_DIR, filename), 'utf-8'));
